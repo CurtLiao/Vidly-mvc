@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Vidly.Models.Movie>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movies</h2>
+
+@* Use ViewModel *@
+
+@*@if (Model.Movies.Count == 0)
+        {
+            <p>We don't have any movie.</p>
+        }
+        else{
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>Movies</th>
+            </tr>
+
+            @foreach (var movie in Model.Movies)
+            {
+                <tr>
+                    <td>@movie.Name</td>
+                </tr>
+            }
+        </table>
+    }
+*@
+
+@* Use IEnumerble *@
+@if (!Model.Any())
+{
+    <p>We don't have any movie.</p>
+}
+else
+{
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Movies</th>
+    </tr>
+
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.Name</td>
+        </tr>
+    }
+</table>
+}

@@ -1,0 +1,16 @@
+﻿@model Vidly.Models.Customer
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+@if (Model == null)
+{
+    <p>No this guy.</p>
+}
+else
+{
+    <h3>@Model.Name</h3>
+}
+
